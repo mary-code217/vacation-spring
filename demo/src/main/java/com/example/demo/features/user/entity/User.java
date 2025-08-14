@@ -1,5 +1,6 @@
 package com.example.demo.features.user.entity;
 
+import com.example.demo.common.audit.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,12 +12,12 @@ import lombok.Setter;
 @Setter @Getter
 @Table(name = "users")
 @Entity()
-public class User {
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String username;
+    private String userName;
 }
