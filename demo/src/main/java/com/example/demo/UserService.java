@@ -20,7 +20,7 @@ public class UserService {
 
         joinDTO.setPassword(bCryptPasswordEncoder.encode(joinDTO.getPassword()));
 
-        UserEntity user = new UserEntity(joinDTO, "USER");
+        UserEntity user = new UserEntity(joinDTO);
 
         userRepository.save(user);
 

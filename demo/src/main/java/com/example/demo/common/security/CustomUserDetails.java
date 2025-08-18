@@ -1,12 +1,12 @@
-package com.example.demo;
+package com.example.demo.common.security;
 
+import com.example.demo.UserEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 @RequiredArgsConstructor
 public class CustomUserDetails implements UserDetails {

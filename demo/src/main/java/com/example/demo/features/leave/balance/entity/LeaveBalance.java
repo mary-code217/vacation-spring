@@ -11,7 +11,7 @@ import lombok.Setter;
 @Table(
         name = "leave_balance",
         uniqueConstraints = @UniqueConstraint(
-                columnNames = {"user_id", "leaveType_id", "year"}
+                columnNames = {"user_id", "leaveType_id", "leave_year"}
         )
 )
 @Getter @Setter
@@ -23,6 +23,7 @@ public class LeaveBalance extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private LeaveType leaveType; // 어떤 휴가 종류의 잔여인지
 
+    @Column(name = "leave_year", nullable = false)
     private int year; // 기준연도
 
     private double earnedDays; // 부여/적립된 총 일수(해당 연도 기준)

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.common.jwt;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,22 +9,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Setter @Getter
+@Getter @Setter
 @NoArgsConstructor
-public class UserEntity {
+public class RefreshEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String username;
-    private String password;
+    private String refresh;
+    private String expiration;
 
-    private String role;
-
-    public UserEntity(JoinDTO joinDTO) {
-        this.username = joinDTO.getUsername();
-        this.password = joinDTO.getPassword();
-        this.role = "ROLE_"+joinDTO.getRole();
+    public RefreshEntity(String username, String refresh, String expiration) {
+        this.username = username;
+        this.refresh = refresh;
+        this.expiration = expiration;
     }
 }
