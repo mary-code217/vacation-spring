@@ -59,6 +59,11 @@ public class UserController {
         return "admin page";
     }
 
+    @GetMapping("/user")
+    public String user() {
+        return "user page";
+    }
+
     @PostMapping("/reissue")
     public ResponseEntity<?> reissue(HttpServletRequest request, HttpServletResponse response) {
 

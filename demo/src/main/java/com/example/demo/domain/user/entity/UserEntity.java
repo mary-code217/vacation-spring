@@ -1,10 +1,7 @@
 package com.example.demo.domain.user.entity;
 
 import com.example.demo.domain.user.dto.JoinDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +9,7 @@ import lombok.Setter;
 @Entity
 @Setter @Getter
 @NoArgsConstructor
+@Table(name = "users")
 public class UserEntity {
 
     @Id
